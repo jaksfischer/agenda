@@ -19,6 +19,82 @@ class AgendaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    /**
+     * @OA\Get (
+     *     path="AgendaController",
+     *     tags={"agenda"},
+     *     summary="get agenda",
+     *     operationId="getAgenda",
+     *     @OA\Parameter(
+     *      name="agenda",
+     *     ),
+     *     @OA\RequestBody(
+     *          @OA\MediaType(
+     *              mediaType="application-json",
+     *              @OA\Schema(
+     *                  @OA\Property(
+     *                      property="id",
+     *                      type="integer",
+     *                      description="ID do registro"
+     *                  ),
+     *                  @OA\Property(
+     *                      property="idResp",
+     *                      type="integer",
+     *                      description="ID usuário responsável pela atividade."
+     *                  ),
+     *                 @OA\Property(
+     *                      property="dtInicio",
+     *                      type="string",
+     *                      description="Data de início da atividade"
+     *                  ),
+     *                 @OA\Property(
+     *                      property="dtFinal",
+     *                      type="string",
+     *                      description="Data do prazo final da atividade"
+     *                  ),
+     *                 @OA\Property(
+     *                      property="dtConclusao",
+     *                      type="string",
+     *                      description="Data de conclusão da atividade"
+     *                  ),
+     *                 @OA\Property(
+     *                      property="status",
+     *                      type="integer",
+     *                      description="0 para não finalizado - 1 para finalizado"
+     *                  ),
+     *                 @OA\Property(
+     *                      property="titulo",
+     *                      type="string",
+     *                      description="Título da atividade"
+     *                  ),
+     *                 @OA\Property(
+     *                      property="descricao",
+     *                      type="string",
+     *                      description="Descrição da atividade"
+     *                  ),
+     *                 @OA\Property(
+     *                      property="created_at",
+     *                      type="string",
+     *                      description="Data de inserção do registro"
+     *                  ),
+     *                 @OA\Property(
+     *                      property="updtaed_at",
+     *                      type="string",
+     *                      description="Data de modificação do registro"
+     *                  ),
+     *              )
+     *          )
+     *      ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Success",
+     *     ),
+     * )
+     *
+     * @return array Agenda information
+     * @throws Exception
+     */
     public function index()
     {
         return $this->service->index();

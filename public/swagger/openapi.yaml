@@ -1,0 +1,52 @@
+openapi: 3.0.0
+paths:
+  AgendaController:
+    get:
+      tags:
+        - agenda
+      summary: 'get agenda'
+      operationId: getAgenda
+      parameters:
+        -
+          name: agenda
+      requestBody:
+        content:
+          application-json:
+            schema:
+              properties:
+                id:
+                  description: 'ID do registro'
+                  type: integer
+                idResp:
+                  description: 'ID usuário responsável pela atividade.'
+                  type: integer
+                dtInicio:
+                  description: 'Data de início da atividade'
+                  type: string
+                dtFinal:
+                  description: 'Data do prazo final da atividade'
+                  type: string
+                dtConclusao:
+                  description: 'Data de conclusão da atividade'
+                  type: string
+                status:
+                  description: '0 para não finalizado - 1 para finalizado'
+                  type: integer
+                titulo:
+                  description: 'Título da atividade'
+                  type: string
+                descricao:
+                  description: 'Descrição da atividade'
+                  type: string
+                created_at:
+                  description: 'Data de inserção do registro'
+                  type: string
+                updtaed_at:
+                  description: 'Data de modificação do registro'
+                  type: string
+              type: object
+      responses:
+        '500':
+          description: 'Token expired'
+        '200':
+          description: Success
