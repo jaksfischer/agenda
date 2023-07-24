@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "7a3a7595-9246-47dc-947d-f2741b6f3813",
+		"name": "Febrafar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13139402"
+	},
+	"item": [
+		{
+			"name": "Ver Agenda Geral",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/agenda",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"agenda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Registro Específico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/agenda/visualizar/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"agenda",
+						"visualizar",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver agenda de uma pessoa específica",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/agenda/visualizar/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"agenda",
+						"visualizar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar range de data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dtInicio\": \"2023-05-20\",\r\n    \"dtFinal\": \"2023-06-02\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/agenda/visualizarIntervalo",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"agenda",
+						"visualizarIntervalo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inserir novo Registro",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idResp\": 1,\r\n    \"dtInicio\": \"2023-06-01 20:52:44\",\r\n    \"dtFinal\": \"2023-06-09 20:52:44\",\r\n    \"dtConclusao\": null,\r\n    \"status\": 0,\r\n    \"titulo\": \"Atividade teste\",\r\n    \"descricao\": \"Nesta atividade, você deverá fazer a criação de um card via integração.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/agenda/criarAgenda",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"agenda",
+						"criarAgenda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Registro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"idResp\": 1,\r\n    \"dtInicio\": \"2023-06-03 20:52:44\",\r\n    \"dtFinal\": \"2023-06-09 20:52:44\",\r\n    \"dtConclusao\": null,\r\n    \"status\": 0,\r\n    \"titulo\": \"Atividade teste\",\r\n    \"descricao\": \"Nesta atividade, você deverá fazer a criação de um card via integração.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/agenda/editarRegistro",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"agenda",
+						"editarRegistro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir registro da agenda",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/agenda/removerRegistro/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"agenda",
+						"removerRegistro",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
